@@ -1,0 +1,172 @@
+/* DataVision 全局样式 */
+:root {
+  --dv-primary: #1677ff;
+  --dv-success: #52c41a;
+  --dv-warning: #faad14;
+  --dv-error: #f5222d;
+  --dv-info: #1677ff;
+  --dv-bg: #f5f5f5;
+  --dv-header-height: 56px;
+  --dv-sider-width: 220px;
+  --dv-sider-collapsed-width: 64px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+/* 看板画布样式 */
+.dv-canvas {
+  background: #f0f2f5;
+  min-height: 100%;
+}
+
+.dv-canvas.dark {
+  background: #141414;
+}
+
+.dv-canvas.tech-blue {
+  background: linear-gradient(135deg, #0a1628 0%, #1a2a4a 100%);
+}
+
+.dv-canvas.business-green {
+  background: linear-gradient(135deg, #0a2816 0%, #1a4a2a 100%);
+}
+
+.dv-canvas.midnight {
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+}
+
+/* 看板组件卡片 */
+.dv-widget {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+}
+
+.dv-widget:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.dv-widget-header {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: move;
+  user-select: none;
+}
+
+.dv-widget-body {
+  padding: 12px;
+  height: calc(100% - 45px);
+}
+
+/* 自然语言输入框 */
+.nl-input-wrapper {
+  position: relative;
+}
+
+.nl-input-wrapper .nl-sparkle {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #1677ff;
+  font-size: 18px;
+  z-index: 1;
+}
+
+.nl-input-wrapper input {
+  padding-left: 40px !important;
+  border-radius: 24px !important;
+  height: 48px !important;
+  font-size: 16px !important;
+  box-shadow: 0 2px 8px rgba(22, 119, 255, 0.15);
+}
+
+/* 登录页 */
+.dv-login-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dv-login-card {
+  width: 420px;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.dv-login-header {
+  text-align: center;
+  padding: 40px 0 24px;
+  background: linear-gradient(135deg, #1677ff 0%, #0958d9 100%);
+  color: #fff;
+}
+
+.dv-login-header h1 {
+  font-size: 28px;
+  margin-bottom: 4px;
+}
+
+.dv-login-header p {
+  opacity: 0.85;
+  font-size: 14px;
+}
+
+.dv-login-form {
+  padding: 32px 40px 40px;
+}
+
+/* 动画 */
+@keyframes dv-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dv-fade-in {
+  animation: dv-fade-in 0.3s ease-out;
+}
+
+@keyframes dv-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.dv-loading-text {
+  animation: dv-pulse 1.5s infinite;
+}

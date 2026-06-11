@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ecommerce-sales",
+    "name": "电商销售概览",
+    "description": "电商核心指标看板：GMV、订单量、品类分布、区域地图、趋势分析",
+    "category": "电商",
+    "thumbnail": "/templates/ecommerce-sales.png",
+    "file": "/templates/ecommerce-sales.json",
+    "tags": ["电商", "销售", "GMV"]
+  },
+  {
+    "id": "user-growth",
+    "name": "用户增长分析",
+    "description": "用户注册趋势、活跃度、等级分布、地区覆盖",
+    "category": "运营",
+    "thumbnail": "/templates/user-growth.png",
+    "file": "/templates/user-growth.json",
+    "tags": ["用户", "增长", "运营"]
+  }
+]

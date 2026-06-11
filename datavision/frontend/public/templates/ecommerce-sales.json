@@ -1,0 +1,91 @@
+{
+  "name": "电商销售概览",
+  "description": "电商核心指标看板：GMV、订单量、品类分布、区域地图、趋势分析",
+  "category": "电商",
+  "theme": "default",
+  "width": 1920,
+  "height": 1080,
+  "refresh_interval": 60,
+  "components": [
+    {
+      "chart_type": "card",
+      "chart_name": "总销售额 (GMV)",
+      "position": { "x": 0, "y": 0, "w": 3, "h": 2 },
+      "config": { "metrics": [{ "field": "total_amount", "aggregation": "sum" }], "dimensions": [] }
+    },
+    {
+      "chart_type": "card",
+      "chart_name": "总订单数",
+      "position": { "x": 3, "y": 0, "w": 3, "h": 2 },
+      "config": { "metrics": [{ "field": "id", "aggregation": "count" }], "dimensions": [] }
+    },
+    {
+      "chart_type": "card",
+      "chart_name": "客单价",
+      "position": { "x": 6, "y": 0, "w": 3, "h": 2 },
+      "config": { "metrics": [{ "field": "total_amount", "aggregation": "avg" }], "dimensions": [] }
+    },
+    {
+      "chart_type": "card",
+      "chart_name": "退款率",
+      "position": { "x": 9, "y": 0, "w": 3, "h": 2 },
+      "config": { "metrics": [{ "field": "status", "aggregation": "count" }], "dimensions": [] }
+    },
+    {
+      "chart_type": "line",
+      "chart_name": "销售趋势 (近30天)",
+      "position": { "x": 0, "y": 2, "w": 8, "h": 4 },
+      "config": {
+        "dimensions": [{ "field": "order_date", "order": 1 }],
+        "metrics": [{ "field": "total_amount", "aggregation": "sum", "order": 1 }]
+      }
+    },
+    {
+      "chart_type": "pie",
+      "chart_name": "品类销售占比",
+      "position": { "x": 8, "y": 2, "w": 4, "h": 4 },
+      "config": {
+        "dimensions": [{ "field": "category", "order": 1 }],
+        "metrics": [{ "field": "total_amount", "aggregation": "sum", "order": 1 }]
+      }
+    },
+    {
+      "chart_type": "bar",
+      "chart_name": "各地区销售额对比",
+      "position": { "x": 0, "y": 6, "w": 6, "h": 4 },
+      "config": {
+        "dimensions": [{ "field": "region", "order": 1 }],
+        "metrics": [{ "field": "total_amount", "aggregation": "sum", "order": 1 }]
+      }
+    },
+    {
+      "chart_type": "bar",
+      "chart_name": "各渠道销售对比",
+      "position": { "x": 6, "y": 6, "w": 6, "h": 4 },
+      "config": {
+        "dimensions": [{ "field": "channel", "order": 1 }],
+        "metrics": [{ "field": "total_amount", "aggregation": "sum", "order": 1 }]
+      }
+    },
+    {
+      "chart_type": "table",
+      "chart_name": "城市销售排行",
+      "position": { "x": 0, "y": 10, "w": 6, "h": 4 },
+      "config": {
+        "dimensions": [{ "field": "city", "order": 1 }, { "field": "category", "order": 2 }],
+        "metrics": [{ "field": "total_amount", "aggregation": "sum", "order": 1 }, { "field": "quantity", "aggregation": "sum", "order": 2 }],
+        "order_by": [{ "field": "total_amount", "direction": "desc" }],
+        "limit": 20
+      }
+    },
+    {
+      "chart_type": "line",
+      "chart_name": "各品类趋势对比",
+      "position": { "x": 6, "y": 10, "w": 6, "h": 4 },
+      "config": {
+        "dimensions": [{ "field": "order_date", "order": 1 }, { "field": "category", "order": 2 }],
+        "metrics": [{ "field": "total_amount", "aggregation": "sum", "order": 1 }]
+      }
+    }
+  ]
+}
